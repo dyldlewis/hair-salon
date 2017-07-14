@@ -4,6 +4,7 @@
 </head>
 <body>
     <h1>{{ stylist.getName }}</h1>
+    <p><a href="/stylists/{{ stylist.getId }}/edit">Edit this stylist</a></p>
 
     {% if clients is not empty %}
         <p>Here are the tasks:</p>
