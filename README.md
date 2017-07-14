@@ -7,3 +7,8 @@
   -output: Karen -> Nancy
 3. The user can view clients sorted by their stylist.
 4. The user can update and delete stylists.
+
+Mysql commands used:
+> CREATE DATABASE hair_salon;
+> USE hair_salon;
+> CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255));
