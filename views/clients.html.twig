@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Clients</h1>
+
+    {% if clients is not empty %}
+        <p>Here are all your tasks:</p>
+        <ul>
+            {% for client in clients %}
+                <li>{{ client.getName }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/clients' method='post'>
+        <label for='name'>Client name</label>
+        <input id='name' name='name' type='text'>
+
+        <button type='submit'>Add client</button>
+    </form>
+    <form action='/delete_clients' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
+</body>
+</html>
