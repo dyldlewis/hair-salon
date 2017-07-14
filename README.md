@@ -45,14 +45,14 @@ Pc - https://www.learnhowtoprogram.com/php/getting-started-with-php/installing-c
   * type 'git clone (repository url)'
   * type 'cd hair_salon' to access the new directory
   * type 'composer install' to acquire the necessary dependencies
-  * Next, open MAMP
-    * Click preferences>Web Server and click the folder icon next to "document root"
-    * Navigate to hair_salon's web folder and hit select
-    * Start your MAMP Server
-  * Next, open your web browser and enter the url http://localhost:8888/phpMyAdmin/
-    * Click on the "Import" tab and click choose file
-    * Select the zip file in the hair_salon folder and click go
-    * (Optional) repeat for the test zip file in order to pass tests correctly
+* Next, open MAMP
+  * Click preferences>Web Server and click the folder icon next to "document root"
+  * Navigate to hair_salon's web folder and hit select
+  * Start your MAMP Server
+* Next, open your web browser and enter the url http://localhost:8888/phpMyAdmin/
+  * Click on the "Import" tab and click choose file
+  * Select the zip file in the hair_salon folder and click go
+  * (Optional) repeat for the test zip file in order to pass tests correctly
 * visit localhost:8888 and view the application!
 
 
