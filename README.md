@@ -12,3 +12,7 @@ Mysql commands used:
 > CREATE DATABASE hair_salon;
 > USE hair_salon;
 > CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255));
+> USE hair_salon;
+
+> ALTER TABLE client ADD stylist_id int;
+> DROP DATABASE hair_salon_test;
