@@ -26,7 +26,6 @@
             $name = "Leslie";
             $test_client = new Stylist($name);
 
-
             $executed = $test_client->save();
 
             $this->assertTrue($executed, "Stylist not successfully saved to database");
@@ -91,6 +90,25 @@
 
             //Assert
             $this->assertEquals($test_stylist, $result);
+        }
+
+        function testGetClients()
+        {
+            $stylist_name = "Daisy";
+            $test_stylist = new Stylist($stylist_name);
+            $test_stylist->save();
+            $stylist_id = $test_stylist->getId();
+
+            $name = "Brandon";
+            $name2 = "Michael";
+            $test_client = new Client($name, $stylist_id);
+            $test_client->save();
+            $test_client2 = new Client($name2, $stylist_id);
+            $test_client2->save();
+
+            $result = $test_stylist->getClients();
+
+            $this->assertEquals([$test_client, $test_client2], $result);
         }
     }
 ?>
