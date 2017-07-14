@@ -68,5 +68,37 @@
             $this->assertEquals([], $result);
         }
 
+        function testGetId()
+        {
+            //Arrange
+            $name = "Nancy";
+            $test_client = new Client($name);
+            $test_client->save();
+
+            //Act
+            $result = $test_client->getId();
+
+            //Assert
+            $this->assertTrue(is_numeric($result));
+        }
+
+        function testFind()
+        {
+            //Arrange
+            $name = "Bobby";
+            $name2 = "Karen";
+            $test_client = new Client($name);
+            $test_client->save();
+            $test_client2 = new Client($name2);
+            $test_client2->save();
+
+            //Act
+            $id = $test_client->getId();
+            $result = Client::find($id);
+
+            //Assert
+            $this->assertEquals($test_client, $result);
+        }
+
     }
 ?>
