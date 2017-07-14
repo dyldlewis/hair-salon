@@ -1,10 +1,24 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Hair Salon</title>
+</head>
+
 <h1>Change the stylist {{ stylist.getName }}</h1>
+<body>
+  <div class="container">
+    <form action="/stylists/{{ stylist.getId }}" method="post">
+      <input name="_method" type="hidden" value="patch">
 
-<form action="/stylists/{{ stylist.getId }}" method="post">
-  <input name="_method" type="hidden" value="patch">
+      <label for="name">Change your Stylist</label>
+      <input id="name" name="name" type="text">
 
-  <label for="name">Change your Stylist</label>
-  <input id="name" name="name" type="text">
+      <button type="submit">Update</button>
+    </form>
 
-  <button type="submit">Update</button>
-</form>
+    <form action="/stylists/{{ stylist.getId }}" method="post">
+      <input name="_method" type="hidden" value="delete">
+
+      <button type="submit">Delete this stylist</button>
+    </form>
+  </div>
+</body>

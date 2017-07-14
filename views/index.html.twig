@@ -1,29 +1,31 @@
 <html>
 <head>
-    <title>Hair Salon</title>
+  <title>Hair Salon</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+  <div class="container">
     <h1>Welcome to the Hair Salon</h1>
 
     <p>Create a new Stylist:</p>
 
-    <form action="/stylists" method="post">
+      <form action="/stylists" method="post">
         <label for="name">Stylist name:</label>
         <input id="name" name="name" type="text">
 
         <button type="submit">Add stylist</button>
-    </form>
+      </form>
 
-    {% if stylists is not empty %}
+      {% if stylists is not empty %}
         <p>Here are all your stylists:</p>
         <ul>
             {% for stylist in stylists %}
-                <li><a href="/stylists/{{ stylist.getId }}">{{ stylist.getName }}</a></li>
+              <li><a href="/stylists/{{ stylist.getId }}">{{ stylist.getName }}</a></li>
             {% endfor %}
         </ul>
-    {% else %}
-      <p>There are no stylists yet!</p>
-    {% endif %}
-
+      {% else %}
+        <p>There are no stylists yet!</p>
+      {% endif %}
+  </div>
 </body>
 </html>
