@@ -21,12 +21,12 @@ The user can add stylists, and then for each stylist they can add a list of clie
 4. The user can update and delete stylists.
 
 ## Mysql commands used:
-CREATE DATABASE hair_salon;
-USE hair_salon;
-CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255));
-USE hair_salon;
-ALTER TABLE clients ADD stylist_id int;
-DROP DATABASE hair_salon_test;
+* CREATE DATABASE hair_salon;
+* USE hair_salon;
+* CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR (255));
+* USE hair_salon;
+* ALTER TABLE clients ADD stylist_id int;
+* DROP DATABASE hair_salon_test;
 
 ## Prerequisites
 * Both php and composer are required for this app, if you do not yet have them installed you can follow this tutorial here:
