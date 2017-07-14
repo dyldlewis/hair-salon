@@ -37,7 +37,7 @@
 
     $app->post("/delete_clients", function() use ($app) {
         Client::deleteAll();
-        return $app['twig']->render('index.html.twig');
+        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
 
     $app->post("/stylists", function() use ($app) {
