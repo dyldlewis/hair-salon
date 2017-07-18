@@ -9,10 +9,10 @@
     <p><a href="/stylists/{{ stylist.getId }}/edit">Edit this stylist</a></p>
 
     {% if clients is not empty %}
-      <p>Here are the tasks:</p>
+      <p>Here are the clients:</p>
       <ul>
         {% for client in clients %}
-          <li>{{ client.getName }}</li>
+          <li><a href="/clients/{{ client.getId }}/edit">{{ client.getName }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}
@@ -20,7 +20,7 @@
     <h4>Add a client</h4>
 
     <form action='/clients' method='post'>
-        <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
+        <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId }}">
         <label for='name'>Client name</label>
         <input id='name' name='name' type='text'>
 

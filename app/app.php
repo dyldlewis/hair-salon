@@ -72,10 +72,22 @@
     });
 
     $app->delete("/stylists/{id}", function($id) use ($app) {
-    $stylist = Stylist::find($id);
-    $stylist->delete();
-    return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
+        $stylist = Stylist::find($id);
+        $stylist->delete();
+        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
+
+    $app->get("/clients/{id}/edit", function($id) use ($app) {
+        $client = Client::find($id);
+        return $app['twig']->render('client_edit.html.twig', array('client' => $client));
+    });
+
+    $app->patch("/clients", function($id) use ($app) {
+        $name = $_POST['name'];
+        $client = Client::find($id);
+        $client->update($name);
+        return $app['twig']->render('client.html.twig', array('client' => $client, 'stylists' => $client->getStylists()));
+});
 
     return $app;
 ?>
